@@ -23,3 +23,4 @@ reduct_sorted = order_rdd2.sortBy(lambda x : x[1],False)
 print(reduct_sorted.collect())
 
 
+print(spark.sparkContext.uiWebUrl)
