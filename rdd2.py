@@ -10,13 +10,15 @@ spark = SparkSession. \
     getOrCreate()
 
 
-
 word = ("big","Data","is","super","interesting","Big","data","is","A","Trending","techology")
 
-rrd1 = spark.sparkContext.parallelize(word)
 
-rrd2 = rrd1.map(lambda x: (x,1))
+word_rdd = spark.sparkContext.parallelize(word)
 
-rdd3 = rrd2.reduceByKey(lambda x,y : (x+y))
+print(word_rdd.getNumPartitions())
 
-print(rdd3.collect())
+print(spark.sparkContext.defaultParallelism)
+
+print(spark.sparkContext.defaultMinPartitions)
+
+
