@@ -26,9 +26,9 @@ user_df = spark.read.format('json').schema(schema).load('/public/sms/users')
 
 user_df.show()
 
-user_df.rdd.getNumPartitions()
+print(user_df.rdd.getNumPartitions())
 
-user_df.count()
+print(user_df.count())
 
 
 print(user_df)

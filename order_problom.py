@@ -19,7 +19,7 @@ order_rdd1 = order_rdd.map(lambda x: (x.split(",")[3],1))
 order_rdd2 = order_rdd1.reduceByKey(lambda x,y: x+y)
 
 reduct_sorted = order_rdd2.sortBy(lambda x : x[1],False)
-
+print("new")
 print(reduct_sorted.collect())
 
 

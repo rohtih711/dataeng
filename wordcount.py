@@ -31,4 +31,5 @@ rdd3 = rdd2.map(lambda  x : (x,1))
 
 rdd4 = rdd3.reduceByKey(lambda x,y: x+y)
 
+print('hello')
 print(rdd4.collect())
